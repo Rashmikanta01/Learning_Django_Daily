@@ -10,5 +10,4 @@ class Countries(models.Model):
 class Capitals(models.Model):
     Countries_id=models.OneToOneField(Countries,on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
-    url=models.URLField()
 
