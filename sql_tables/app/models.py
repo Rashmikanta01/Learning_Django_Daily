@@ -5,6 +5,8 @@ class DEPT(models.Model):
     DEPTNO = models.IntegerField(primary_key=True)
     DNAME = models.CharField(max_length=50)
     LOC = models.CharField(max_length=50)
+    def __str__(self):
+        return self.DNAME
 
 class EMP(models.Model):
     EMPNO = models.IntegerField(primary_key=True)
