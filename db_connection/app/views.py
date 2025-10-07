@@ -40,7 +40,7 @@ def insert_accesssrecord(request):
         if TARO[1]:
             return HttpResponse('one row is created in accessrecord')
         else:
-            return HttpResponse('Given input is already present')
+            return HttpResponse('Given input already present')
     else:
         return HttpResponse('Given webpage name is not present in webpage Table')
     
