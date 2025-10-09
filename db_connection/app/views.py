@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-# Create your views here.
+# here we can insert the data into database
 from app.models import*
 
 def insert_topic(request):
@@ -43,4 +43,20 @@ def insert_accesssrecord(request):
             return HttpResponse('Given input already present')
     else:
         return HttpResponse('Given webpage name is not present in webpage Table')
+    
+#here we can display the data from database and send to frontend
+def display_webpage(request):
+    QLWO=WebPage.objects.all()
+    d={'QLWO': QLWO }
+    return render(request,'display_webpage.html' ,d)
+
+def display_topic(request):
+    QLTO=Topic.objects.all()
+    d={'QLTO': QLTO }
+    return render(request,'display_topic.html' ,d)
+
+def display_accessrecord(request):
+    QLARO=AccessRecord.objects.all()
+    d={'QLARO': QLARO }
+    return render(request,'display_accessrecord.html' ,d)
     

@@ -1,5 +1,5 @@
 """
-URL configuration for db_connection project.
+URL configuration for task_authorbooks_table project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -17,15 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app.views import *
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('insert_topic/',insert_topic, name='insert_topic'),
-    path('insert_webpage/',insert_webpage, name='insert_webpage'),
-    path('display_webpage/',display_webpage, name='display_webpage'),
-    path('insert_accesssrecord/',insert_accesssrecord, name='insert_accesssrecord'),
-    path('display_topic/',display_topic, name='display_topic'),
-    path('display_accessrecord/',display_accessrecord, name='display_accessrecord'),    
-
 ]
