@@ -66,7 +66,7 @@ def display_webpage(request):
 
     QLWO=WebPage.objects.filter(id__range=(2,5))
 
-    # QLWO=WebPage.objects.filter(idgte=2)
+    QLWO=WebPage.objects.filter(idgte=2)
 
     # QLWO=WebPage.objects.filter(name__startswith='R')
 
