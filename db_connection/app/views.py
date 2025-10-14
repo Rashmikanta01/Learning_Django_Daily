@@ -3,6 +3,7 @@ from django.shortcuts import render
 #from django.db. function import Length
 # here we can insert the data into database
 from app.models import*
+from django.db.models import Q
 
 def insert_topic(request):
     tn=input('enter topic name')
@@ -55,7 +56,7 @@ def insert_accesssrecord(request):
 def display_webpage(request):
     QLWO=WebPage.objects.all()
     #QLWO=WebPage.objects.all()[::-1]
-    QLWO=WebPage.objects.all().order_by('name')
+    #QLWO=WebPage.objects.all().order_by('name')
     #QLWO=WebPage.objects.all().order_by('-name')
     # QLWO=WebPage.objects.all()[:2:] #here we use slicing to find or retrieve data any where on table
     # #QLWO=WebPage.objects.all().order_by(length('name'))
@@ -64,11 +65,11 @@ def display_webpage(request):
 
     # QLWO=WebPage.objects.filter(id_in=(2,5))
 
-    QLWO=WebPage.objects.filter(id__range=(2,5))
+    # QLWO=WebPage.objects.filter(id__range=(2,5))
 
-    QLWO=WebPage.objects.filter(idgte=2)
+    # QLWO=WebPage.objects.filter(id__gte=2)
 
-    QLWO=WebPage.objects.filter(name__startswith='R')
+    # QLWO=WebPage.objects.filter(name__startswith='R')
 
     # QLWO=WebPage.objects.filter(name__endswith='T')
 
@@ -77,8 +78,8 @@ def display_webpage(request):
     # QLWO=WebPage.objects.filter(name__regex='^r\w*')
 
     # QLWO=WebPage.objects.filter(name__isnull=False)
-
-
+    QLWO=WebPage.objects.filter(name__in=('hardik','kohli'))    #here we can use and operator that represents ',' comma
+    QLWO=WebPage.objects.filter(Q(name='hardik') | Q(topic_name='cricket')) #here we can use or operator that represents '|'
 
     d={'QLWO': QLWO }
     return render(request,'display_webpage.html' ,d)
