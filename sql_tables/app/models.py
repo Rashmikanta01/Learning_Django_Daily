@@ -25,6 +25,8 @@ class BONUS(models.Model):
     JOB = models.CharField(max_length=100)
     SAL = models.DecimalField(max_digits=5,decimal_places=2)
     COMM = models.DecimalField(max_digits=5,decimal_places=2)
+    def __str__(self):
+        return self.ENAME
 
 class SALGRADE(models.Model):
     GRADE = models.IntegerField()
