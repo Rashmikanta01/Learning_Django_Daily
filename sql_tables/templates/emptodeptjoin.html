@@ -19,13 +19,15 @@
             <th>salary</th>
             <th>comm</th>
             <th>deptno</th>
+            <!-- 
             <th>dept name</th>
             <th>location</th>
         </tr>
 
         {% for EDO in QLEDO %}
         <tr>
-            <td>{{EDO.empno}}</td>
+            
+            <td>{{EDO.EMPNO}}</td>
             <td>{{EDO.ENAME}}</td>
             <td>{{EDO.JOB}}</td>
             <td>{{EDO.MGR}}</td>
@@ -35,6 +37,42 @@
             <td>{{EDO.DEPTNO.DEPTNO}}</td>
             <td>{{EDO.DEPTNO.DNAME}}</td>
             <td>{{EDO.DEPTNO.LOC}}</td>
+        </tr>
+        {% endfor %} -->
+
+        <!-- {% for EMO in QLEMO %}
+        <tr>
+            
+            <td>{{EMO.EMPNO}}</td>       here we can try to fetch the mgr table data so here we can comment all the data related to dept table
+            <td>{{EMO.ENAME}}</td>
+            <td>{{EMO.JOB}}</td>
+            <td>{{EMO.MGR}}</td>
+            <td>{{EMO.HIREDATE}}</td>
+            <td>{{EMO.SAL}}</td>
+            <td>{{EMO.COMM}}</td>
+            <td>{{EMO.DEPTNO}}</td>
+            
+            <td>{{EMO.DNAME}}</td>
+            <td>{{EMO.LOC}}</td>
+        </tr>
+        {% endfor %}-->
+
+
+
+        {% for EDMO in QLEDMO %}
+        <tr>
+            
+            <td>{{EDMO.EMPNO}}</td>       <!--here we can try to fetch the mgr table data so here we can comment all the data related to dept table-->
+            <td>{{EDMO.ENAME}}</td>
+            <td>{{EDMO.JOB}}</td>
+            <td>{{EDMO.MGR}}</td>
+            <td>{{EDMO.HIREDATE}}</td>
+            <td>{{EDMO.SAL}}</td>
+            <td>{{EDMO.COMM}}</td>
+            <td>{{EDMO.DEPTNO}}</td>
+            <!-- 
+            <td>{{EMO.DNAME}}</td>
+            <td>{{EMO.LOC}}</td> -->
         </tr>
         {% endfor %}
         </table>

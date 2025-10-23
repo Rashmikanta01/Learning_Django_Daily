@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app.views import emptodeptjoin
+from app.views import depttoemp_pfr, emptodeptjoin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('emptodeptjoin/',emptodeptjoin,name='emptodeptjoin'),
+    path('depttoemp_pfr/',depttoemp_pfr,name='depttoemp_pfr'),
 ]

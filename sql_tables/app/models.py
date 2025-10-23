@@ -6,8 +6,9 @@ class DEPT(models.Model):
     DNAME = models.CharField(max_length=50)
     LOC = models.CharField(max_length=50)
     def __str__(self):
-        return self.DNAME
-
+        # return self.DNAME
+        return str(self.DEPTNO)  #to return deptno as output
+        
 class EMP(models.Model):
     EMPNO = models.IntegerField(primary_key=True)
     ENAME = models.CharField(max_length=100)
@@ -18,7 +19,8 @@ class EMP(models.Model):
     COMM = models.DecimalField(max_digits=5,decimal_places=2, null=True, blank=True)
     DEPTNO = models.ForeignKey(DEPT, on_delete=models.CASCADE)
     def __str__(self):
-        return self.ENAME
+        return str(self.EMPNO)
+        #return self.ENAME #here we can comment this to return deptno as output
 
 class BONUS(models.Model):
     ENAME = models.CharField(max_length=100)

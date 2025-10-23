@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- here we can try to fetch the emp table data using prefetch related -->
+<body>
+    <center>
+
+        {% for DEO in QLDEO %}
+        <h1>{{DEO.DNAME}}</h1>
+        <table border="3px">
+            <tr>
+                <th>ENAME</th>
+                <th>EMPNO</th>
+                <th>JOB</th>
+                <th>SAL</th>
+            </tr>
+
+            {% for EO in DEO.emp_set.all%}
+            <tr>
+                <td>{{ EO.ENAME }}</td>
+                <td>{{ EO.DEPTNO }}</td>
+                <td>{{ EO.JOB }}</td>
+                <td>{{ EO.SAL }}</td>
+            </tr>
+            {% endfor%}
+
+        </table>
+        <hr>
+        {% endfor %}
+    </center>
+</body>
+
+</html>
