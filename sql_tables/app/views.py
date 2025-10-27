@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from app.models import *
+from django.db.models import Prefetch
 
 def emptodeptjoin(request):
     # QLEDO=EMP.objects.all().select_related('DEPTNO')
@@ -63,8 +64,12 @@ def emptodeptjoin(request):
     return render(request,'emptodeptjoin.html' ,d)
 
 def depttoemp_pfr(request):
-    QLDEO= DEPT.objects.all().prefetch_related('emp_set')
-
+    QLDEO= DEPT.objects.all().prefetch_related('emp_set').filter(DNAME='Accounting')
+    #QLDEO=DEPT.objects.all().prefetch_related('emp_set').filter(DNAME='Accounting')
+    #QLDEO=DEPT.objects.prefetch_related(Prefetch('emp_set',queryset=EMP.objects.filter(ENAME='Deeps')))
+    QLDEO=DEPT.objects.prefetch_related(Prefetch('emp_set',queryset=EMP.objects.filter(ENAME='Biswa')| EMP.objects.filter(DEPTNO__DNAME='Accounting')))
+    
+    #QLDEO=DEPT.objects.prefetch_related('emp_set').filter(DETPNO='Accounting')
 
     d={'QLDEO':QLDEO}
     return render(request,'depttoemp_pfr.html',d)
