@@ -69,7 +69,7 @@ def depttoemp_pfr(request):
     #QLDEO=DEPT.objects.prefetch_related(Prefetch('emp_set',queryset=EMP.objects.filter(ENAME='Deeps')))
     QLDEO=DEPT.objects.prefetch_related(Prefetch('emp_set',queryset=EMP.objects.filter(ENAME='Biswa')| EMP.objects.filter(DEPTNO__DNAME='Accounting')))
     
-    #QLDEO=DEPT.objects.prefetch_related('emp_set').filter(DETPNO='Accounting')
+    QLDEO=DEPT.objects.prefetch_related('emp_set').filter(DETPNO='Accounting')
 
     d={'QLDEO':QLDEO}
     return render(request,'depttoemp_pfr.html',d)

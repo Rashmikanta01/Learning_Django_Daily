@@ -42,7 +42,8 @@ def insert_accesssrecord(request):
         Wo=LWo[0]
         author=input('enter name of author')
         date=input('enter date in this fromat yyyy-mm-dd')
-        TARO=AccessRecord.objects.get_or_create(name=Wo,author=author,date=date)
+        # create by foreign-key id explicitly to avoid passing wrong type
+        TARO = AccessRecord.objects.get_or_create(name_id=Wo.id, author=author, date=date)
         if TARO[1]:
             QLARO=AccessRecord.objects.all()
             d={'QLARO': QLARO }
@@ -93,7 +94,7 @@ def display_topic(request):
 def display_accessrecord(request):
     QLARO=AccessRecord.objects.all()
     
-    #QLAO=AccessRecord.objects.filter(date='2025-10-11')
+    QLARO=AccessRecord.objects.filter(date='2025-10-11')
     QLARO=AccessRecord. objects. filter(date__month='10')
     QLARO=AccessRecord.objects.filter(date__year=2025)
     QLARO=AccessRecord. objects. filter(date__day='11')
