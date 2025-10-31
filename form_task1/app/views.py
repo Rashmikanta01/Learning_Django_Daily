@@ -41,7 +41,7 @@ def insert_webpage(request):
 def insert_accessrecord(request):
     QLWO=WebPage.objects.all()
     d={'QLWO': QLWO ,
-       }
+       'QLTO':QLTO}
     if request.method == 'POST':
         na=request.POST['na']
         au=request.POST['au']
