@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1> insert_accessrecord</h1>
+        <form  method="POST">
+            {% csrf_token %}
+
+            <label for='tn'>Topic Name</label>
+            <select name="tn" id="tn">
+                {% for TO in QLTO %}
+                    <option value="{{TO.topic_name}}">{{TO.topic_name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <label for='na'>Name</label>
+            <select name="na" id="na">
+                {% for WP in QLWP %}
+                    <option value="{{WP.name}}">{{WP.name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <label for='au'>Author</label>
+            <input type="text" name="au" id="au" >
+            <br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </center>
+</body>
+</html>
