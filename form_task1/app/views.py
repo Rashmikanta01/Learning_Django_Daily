@@ -54,3 +54,20 @@ def insert_accessrecord(request):
             return HttpResponse('accessrecord already exists')
     return render(request,'insert_accessrecord.html',d)
 
+def select_multiple_topics(request):
+    QLTO=Topic.objects.all()
+    d={'QLTO': QLTO }
+    if request.method == 'POST':
+        STL=request.POST.getlist('tn')
+        QLWO=WebPage.objects.none()
+        for TO in STL:
+            QLWO=QLWO | WebPage.objects.filter(topic_name=TO)
+        d1={'QLWO': QLWO}
+        return render(request,'display_webpage.html',d1)
+    return render(request,'select_multiple_topics.html',d)
+
+def display_webpage(request):
+    QLWO=WebPage.objects.all()
+    d={'QLWO': QLWO }
+    return render(request,'display_webpage.html' ,d)
+

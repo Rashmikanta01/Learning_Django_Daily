@@ -1,5 +1,5 @@
 """
-URL configuration for form_task1 project.
+URL configuration for djanagoform project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -17,14 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from app.views import *
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('insert_topic/', insert_topic, name='insert_topic'),
-    path('display_topic/', display_topic, name='display_topic'),
-    path('insert_webpage/', insert_webpage, name='insert_webpage'),
-    path('insert_accessrecord/', insert_accessrecord, name='insert_accessrecord'),
-    path('select_multiple_topics/', select_multiple_topics, name='select_multiple_topics'),
-    path('display_webpage/', display_webpage, name='display_webpage'),
 ]
