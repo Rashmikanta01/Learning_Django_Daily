@@ -7,9 +7,9 @@ def stdjform(request):
     SDF=StudentDjForm()
     d={'SDF':SDF}
     if request.method=='POST':
-        SDF=StudentDjForm(request.POST)
-        if SDF.is_valid():
-            return HttpResponse(str(SDF.cleaned_data))
+        SFDO=StudentDjForm(request.POST)
+        if SFDO.is_valid():
+            return HttpResponse(str(SFDO.cleaned_data))
         else:
             return HttpResponse('invalid data')
     return render(request,'stdjform.html',d)
