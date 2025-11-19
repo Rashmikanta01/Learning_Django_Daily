@@ -16,7 +16,3 @@ class AccessMF(forms.ModelForm):
         model=AccessRecord
         fields='__all__'
 
-class CountriesMF(forms.ModelForm):
-    class Meta:
-        model=Countries
-        fields='__all__'   

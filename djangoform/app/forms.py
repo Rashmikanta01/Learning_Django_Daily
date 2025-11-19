@@ -9,3 +9,5 @@ class StudentDjForm(forms.Form):
     course=forms.MultipleChoiceField(choices=c,widget=forms.CheckboxSelectMultiple)
     password=forms.CharField(widget=forms.PasswordInput)
     address=forms.CharField(widget=forms.Textarea(attrs={'rows':3,'cols':20}))
+
+#

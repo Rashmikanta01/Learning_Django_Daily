@@ -6,3 +6,4 @@ class Student(models.Model):
     sname = models.CharField(max_length=100)
     sage = models.IntegerField()
     semail = models.EmailField()
+    
