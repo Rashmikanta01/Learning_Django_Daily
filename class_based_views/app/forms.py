@@ -5,3 +5,4 @@ class schoolMF(forms.ModelForm):
     class Meta:
         model = school
         fields = '__all__'
+

@@ -1,5 +1,5 @@
 """
-URL configuration for class_based_views project.
+URL configuration for templateview_class project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('')
+    path('RenderHtmlByTV/', RenderHtmlByTV.as_view(), name='RenderHtmlByTV'),
+    path('insertByTV/', insertByTV.as_view(), name='insertByTV'),
 ]
