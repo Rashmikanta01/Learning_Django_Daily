@@ -45,16 +45,4 @@ def insert_accessMF(request):
 
     return render(request, 'insert_accessMF.html', d)
 
-def insert_countriesMF(request):
-    ECOMFO = CountriesMF()
-    d = {'ECOMFO': ECOMFO}
-    if request.method == 'POST':
-        COMFO = CountriesMF(request.POST)
-        if COMFO.is_valid():
-            COMFO.save()
-            return HttpResponse('created')
-        else:
-            return HttpResponse('invalid')
-
-    return render(request, 'insert_countriesMF.html', d)
 
