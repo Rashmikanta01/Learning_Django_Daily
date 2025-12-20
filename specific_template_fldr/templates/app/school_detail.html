@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ school.name }}</title>
+    </head>
+<body>
+    <center>
+        <h1>{{ school.name }}</h1>
+        <p><strong>Principal:</strong> {{ school.principal }}</p>
+        <p><strong>Address:</strong> {{ school.addr }}</p>
+
+        <h3>Students</h3>
+        <ul>
+        {% for student in school.students.all %}
+            <li>{{ student.name }} (age: {{ student.age }})</li>
+        {% empty %}
+            <li>No students registered.</li>
+        {% endfor %}
+        </ul>
+
+        <p><a href="{% url 'schoollistview' %}">Back to list</a></p>
+    </center>
+</body>
+</html>
