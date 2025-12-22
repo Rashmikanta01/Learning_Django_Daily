@@ -1,3 +1,5 @@
+#this is the project of Django REST Framework
+
 from django.shortcuts import render
 from app.serializer import *
 from rest_framework.decorators import api_view,permission_classes
