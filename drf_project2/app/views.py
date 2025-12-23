@@ -42,7 +42,8 @@ class StudentCRUD(APIView):
         if USO.is_valid():
             USO.save()
             return Response({'msg':'Data Partially Updated'})
-        
+        else:
+            return Response({'Failed':'issues while updating'})
         
     def delete(self,request,pk):
         SO=Student.objects.get(pk=pk)
