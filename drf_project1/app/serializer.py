@@ -1,4 +1,4 @@
-from rest_framework import serializers
+from rest_framework import serializers #rest_framework installation required
 from app.models import *
 
 class SchoolMS(serializers.ModelSerializer):
