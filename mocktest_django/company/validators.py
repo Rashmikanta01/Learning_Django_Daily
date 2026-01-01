@@ -15,6 +15,4 @@ def validate_company_code(value):
             "1st & 2nd alphabets, 3rd & 4th numbers, 5th E or N."
         )
 
-def validate_strength(value):
-    if value is not None and value < 0:
-        raise ValidationError("Strength must be zero or a positive number.")
+
